@@ -1,0 +1,54 @@
+body{
+    background: url(../images/background2.jpg);
+    background-position: center center;
+    background-repeat : no-repeat;
+    background-attachment: fixed; 
+    background-size : cover;
+    height: 100%;      
+}
+.chewie{
+    background-image: url('../images/chewbacca.jpg');
+    background-size : 134px 200px;
+    height: 140px;
+    width: 135px;
+    background-repeat: no-repeat;
+    border: 8px solid white;
+}
+.boba{
+    background-image: url('../images/bobafett.jpg');
+    background-size: 140px 250px;
+    height: 140px;
+    width: 135px;
+    background-repeat: no-repeat;
+    border: 8px solid white;
+
+}
+.revan{
+    background-image: url('../images/darthRevan.jpg');
+    background-size : 134px 200px;
+    height: 140px;
+    width: 135px;
+    background-repeat: no-repeat;
+    border: 8px solid white;
+
+}
+.windu{
+    background-image: url('../images/maceWindu.jpg');
+    background-size : 134px 200px;
+    height: 140px;
+    width: 135px;
+    background-repeat: no-repeat;
+    border: 8px solid white;
+
+}
+h1{
+    color: white;
+    
+}
+h4{
+    color: white;
+}
+p{
+    color: white;
+    font-size: 20px;
+}
