@@ -17,7 +17,9 @@ function characterChoices() {
             health: 100,
             attack: 10,
             counterAttack: 15,
-            image: 'assets/images/chewbacca.jpg'
+            image: 'assets/images/chewbacca.jpg',
+            sounds: new Audio('assets/sounds/chewieroar.mp3')
+
         },
         'boba': {
             name: 'Boba Fett',
@@ -94,6 +96,7 @@ function enableEnemySelection(){
 
 function attack(numAttacks){
     console.log('attacking defender');
+    
     gameState.selectedDefender.health -= gameState.selectedCharacter.attack * numAttacks;
 }
 function defend(){
@@ -106,6 +109,8 @@ function isCharacterDead(character){
 }
 function gameWon(){
     console.log('checking if player won');
+    var yoda = new Audio('assets/sounds/strongWithForce.mp3');
+    yoda.play();
     return gameState.enemiesLeft === 0;
 }
 function isAttackPhaseComplete(){
@@ -122,6 +127,7 @@ function isAttackPhaseComplete(){
             alert('You Win! Press Reset to play again');
             $('#reset-button').show();
         }else{
+            
             alert('You are defeated' + gameState.selectedDefender.name + '! Select another enemy to fight');
             enableEnemySelection();
         }
@@ -138,9 +144,14 @@ function emptyDivs(){
     $('#characters-section').show();
 }
 $(document).ready(function(){
+    var theme = new Audio("assets/sounds/theme.mp3");
+    theme.volume = .3;
+    theme.play();
     $('#character-area').on('click', '.character', function(){
         var selectedKey = $(this).attr('data-name');
         gameState.selectedCharacter = characters[selectedKey];
+        //var sound = selectedKey.sounds;
+        //sound.play();
         console.log('player selected');
         $('#selected-character').append(this);
         renderOpponents(selectedKey);
