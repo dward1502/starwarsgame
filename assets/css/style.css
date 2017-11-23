@@ -1,11 +1,4 @@
-body{
-    background: url(../images/background2.jpg);
-    background-position: center center;
-    background-repeat : no-repeat;
-    background-attachment: fixed; 
-    background-size : cover;
-    height: 100%;      
-}
+ /*
 .chewie{
     background-image: url('../images/chewbacca.jpg');
     background-size : 134px 200px;
@@ -40,7 +33,7 @@ body{
     background-repeat: no-repeat;
     border: 8px solid white;
 
-}
+} 
 h1{
     color: white;
     
@@ -51,4 +44,103 @@ h4{
 p{
     color: white;
     font-size: 20px;
+}
+div{
+    display: block;
+}*/
+body {
+    background: url(../images/background2.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+}
+
+img {
+    height: 100px;
+    width: 150px;
+    border-radius: 10px;
+}
+
+.section-title {
+    font-size: 200%;
+}
+
+.main-section-title {
+    font-size: 300%;
+    text-align: center;
+}
+
+.character {
+    display: inline-block;
+    border-style: solid;
+    border-color: green;
+    border-width: 3px;
+    cursor: pointer;
+    background-color: white;
+}
+
+.character-image {
+    padding-right: 16px;
+    padding-left: 16px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.character-name {
+    text-align: center;
+}
+
+.character-health {
+    text-align: center;
+}
+
+.enemy {
+    display: inline-block;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    cursor: pointer;
+    background-color: red;
+}
+
+.target-enemy {
+    background-color: black;
+    color: white;
+}
+
+#selected-character {
+    width: 190px;
+    height: 160px;
+}
+
+#attacker {
+    width: 190px;
+    height: 160px;
+}
+
+#defender {
+    width: 190px;
+    height: 160px;
+}
+
+#defender-name {
+    text-align: center;
+}
+
+#defender-health {
+    text-align: center;
+}
+
+#choose-enemy-button {
+    visibility: hidden;
+}
+
+#restart-button {
+    visibility: hidden;
+}
+
+#turn-counter {
+    font-size: 150%;
 }
