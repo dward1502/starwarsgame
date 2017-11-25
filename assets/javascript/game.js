@@ -95,8 +95,7 @@ function enableEnemySelection(){
 }
 
 function attack(numAttacks){
-    console.log('attacking defender');
-    
+    console.log('attacking defender');   
     gameState.selectedDefender.health -= gameState.selectedCharacter.attack * numAttacks;
 }
 function defend(){
@@ -108,14 +107,14 @@ function isCharacterDead(character){
     return character.health <= 0;
 }
 function gameWon(){
-    console.log('checking if player won');
-    var yoda = new Audio('assets/sounds/strongWithForce.mp3');
-    yoda.play();
+    console.log('checking if player won');    
     return gameState.enemiesLeft === 0;
 }
 function isAttackPhaseComplete(){
-    if (isCharacterDead(gameState.selectedCharacter)){
-        alert('You were defeated by' + gameState.selectedDefender.name + '. Click reset to play again')
+    if (isCharacterDead(gameState.selectedCharacter)){        
+        var vader = new Audio('assets/sounds/dontfailme.mp3');
+        vader.play();
+        alert('You were not strong enough padawan ' + gameState.selectedDefender.name + '. Click reset to play again')
         $('#selected-character').empty();
         $('#reset-button').show();
         return true
@@ -123,12 +122,15 @@ function isAttackPhaseComplete(){
         console.log('defender dead')
         gameState.enemiesLeft--;
             $('#defender').empty();
-        if(gameWon()){
-            alert('You Win! Press Reset to play again');
+        if(gameWon()){            
+            var yoda = new Audio('assets/sounds/strongWithForce.mp3');
+            yoda.play();
+            alert('You Won Jedi, the force is strong with you! Press Reset to play again');
             $('#reset-button').show();
         }else{
-            
-            alert('You are defeated' + gameState.selectedDefender.name + '! Select another enemy to fight');
+            //var saber = new Audio('assets/sounds/Lightsabers.mp3');
+            //saber.play();            
+            alert('You have could not defeat me ' + gameState.selectedDefender.name + '! Select another enemy to challenge');
             enableEnemySelection();
         }
         return true
@@ -160,7 +162,7 @@ $(document).ready(function(){
         enableEnemySelection();        
     })
     $('#attack-button').on('click.attack', function(){
-        console.log('attack clicked');
+        console.log('attack clicked');        
         gameState.numAttacks++;
         attack(gameState.numAttacks);
         defend();
