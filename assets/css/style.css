@@ -30,7 +30,7 @@ img {
     border-color: green;
     border-width: 3px;
     cursor: pointer;
-    background-color: white;
+    background-color: rgb(252, 247, 247);
 }
 
 .character-image {

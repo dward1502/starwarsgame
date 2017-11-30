@@ -47,7 +47,7 @@ function characterChoices() {
 function resetGameState(){
     return {
         selectedCharacter: null,
-        selecetedDefender: null,
+        selectedDefender: null,
         enemiesLeft: 0,
         numAttacks: 0 
     }
